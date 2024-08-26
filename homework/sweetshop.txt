@@ -5,6 +5,20 @@ Please test this website: https://sweetshop.netlify.app/
 
 2. Mark and comment those scenario which fail.
 
+
+Basket functionality:
+    Price calculation functionality:
+
+    Does the price get calculate in the following scenarios:
+        1. Price is correct with a single item.
+        2. Price is correct with multiple items.
+        3. Price is correct when an item is removed.
+        4. Price is 0 after the 'empty basket is clicked'
+
+        5. jei idejai 7 tuos pacius saldainius ir leidzia istrinti tik visus
+        6. jei idejai 7 tuos pacius saldainius ir pasispaude su pristatymu, tai suma padidedo 7 kartus
+        7. nan
+        8. promo kodas neprisitaiko joks, neaisku kaip skaiciuoja
 -   jei paspaudi su pristatymu ismeta nan
 -   jei suma mazesne nei 1.99 ir paspaudi pristatymas, nan
 -   nesugalvoju, ar promo kodas veikia
@@ -54,3 +68,11 @@ Payment:
 CVV:
 
 -   leidzia parinkti neigiama skaiciu
+
+
+
+
+
+
+
+
