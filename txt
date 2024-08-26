@@ -1,0 +1,33 @@
+Please test this website: https://sweetshop.netlify.app/
+
+1. Create a txt document (no formatting is needed) where you split the page into functionalities
+   and write test scenarios for each functionality.
+
+2. Mark and comment those scenario which fail.
+
+-   jei paspaudi su pristatymu ismeta nan
+-   jei suma mazesne nei 1.99 ir paspaudi pristatymas, nan
+-   nesugalvoju, ar promo kodas veikia
+
+Billing address
+
+-   Jei vardas su lietuviskomis raidemis - ok
+-   Jei vardo mazosios raides - ok
+-   Jei vietoj vardo skaiciai, o ant korteles vardas ir pavarde - ok
+-   Jei vietoj vardo ir pavardes tarpai, o ant korteles vardas ir pavarde - ok
+-   Jei vietoj vardo ir pavardes tarpai ir ant korteles vardo ir pavardes tarpai - ok
+-   Jei vardas ir pavarde uzpildyti, o ant korteles nera vardo ir pavardes - ok
+
+Email:
+
+-   tik vienas zodis, be @ - false
+-   @ bet be .com - false
+-   @a.com - ok
+-   vien tarpai - false
+-   @l.it - false
+-   a@l.it - ok
+
+adress:
+
+-   be pasto kodo uzpildyti negalima - false
+-
