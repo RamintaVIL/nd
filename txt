@@ -30,4 +30,27 @@ Email:
 adress:
 
 -   be pasto kodo uzpildyti negalima - false
--
+-   irasiau tik skaicius vietoj gatves pavadinimo - ok
+-   irasiau zenklus vietoj gatves pavadinimo - ok
+-   irasiau tarous vietoj gatves pavadinimo - ok
+
+country:
+
+-   jei nepasirenki country - praso pasirinkti
+    citty:
+-   jei nepasirenki country - praso pasirinkti
+    zip:
+-   jei irasai zenkla - leidzia pasidaryti check
+
+Payment:
+
+-   jei vietoj vardo tarpai - ok
+-   jei vietoj vardo zenkalai - ok
+-   jei vietoj vardo skaiciai - ok
+-   jei vietoj korteles nr raides (tiek mazos, tiek didziosios) - ok
+-   jei vietoj korteles nr panaidoji 1 skaiciu - ok
+-   jei vietoj korteles nr panaidoji zenklus - ok
+
+CVV:
+
+-   leidzia parinkti neigiama skaiciu
