@@ -22,30 +22,34 @@ Basket functionality:
 
 Billing address
 
--   Jei vardas su lietuviskomis raidemis - ok
--   Jei vardo mazosios raides - ok
--   Jei vietoj vardo skaiciai, o ant korteles vardas ir pavarde - ok
--   Jei vietoj vardo ir pavardes tarpai, o ant korteles vardas ir pavarde - ok
--   Jei vietoj vardo ir pavardes tarpai ir ant korteles vardo ir pavardes tarpai - ok
--   Jei vardas ir pavarde uzpildyti, o ant korteles nera vardo ir pavardes - ok
+- If the name contains Lithuanian characters - OK
+- If the name is in lowercase letters - OK
+
+Fail:
+- If numbers are used instead of a name, but the card has a name and surname - OK
+- If there are spaces instead of a name and surname, but the card has a name and surname - OK
+- If there are spaces instead of a name and surname, and the card also has spaces instead of a name and surname - OK
+- If the name and surname are filled in, but the card has no name and surname - OK
 
 Email:
 
--   tik vienas zodis, be @ - false
--   @ bet be .com - false
--   @a.com - ok
--   vien tarpai - false
--   @l.it - false
--   a@l.it - ok
+- Only one word, without @ - OK
+- @ but without .com - OK
 
-adress:
+Fail:
+- @a.com - OK
+- Only spaces - false
+- @l.it - false
+- a@l.it - OK
 
--   be pasto kodo uzpildyti negalima - false
--   irasiau tik skaicius vietoj gatves pavadinimo - ok
--   irasiau zenklus vietoj gatves pavadinimo - ok
--   irasiau tarous vietoj gatves pavadinimo - ok
+Adress:
 
-country:
+- Cannot proceed without filling in the postal code - false
+- Entered only numbers instead of the street name - OK
+- Entered symbols instead of the street name - OK
+- Entered spaces instead of the street name - OK
+
+Country:
 
 -   jei nepasirenki country - praso pasirinkti
     citty:
@@ -53,18 +57,22 @@ country:
     zip:
 -   jei irasai zenkla - leidzia pasidaryti check
 
+If you don't select a country - it asks you to choose one for the city:
+If you don't select a country - it asks you to choose one for the zip code:
+If you enter a symbol - it allows you to proceed with the check.
+
 Payment:
 
--   jei vietoj vardo tarpai - ok
--   jei vietoj vardo zenkalai - ok
--   jei vietoj vardo skaiciai - ok
--   jei vietoj korteles nr raides (tiek mazos, tiek didziosios) - ok
--   jei vietoj korteles nr panaidoji 1 skaiciu - ok
--   jei vietoj korteles nr panaidoji zenklus - ok
+- If there are spaces instead of a name - OK
+- If there are symbols instead of a name - OK
+- If there are numbers instead of a name - OK
+- If there are letters (both lowercase and uppercase) instead of the card number - OK
+- If you use a single number instead of the card number - OK
+- If you use symbols instead of the card number - OK
 
 CVV:
 
--   leidzia parinkti neigiama skaiciu
+-  Allows selecting a negative number.
 
 
 
