@@ -18,20 +18,22 @@ Does the price get calculate in the following scenarios:
 - If you proceed with delivery and the total sum is less than 1.99, the final amount is display as NaN.
 - I could not find out if the promo code is working.
 - If you want to delete only 1 unit, you can't, you can only delete all items with this name. 
-- If you amount is 2 and you proceed with delivery, the total doubles it to 20.
+- If product amount is 1,2,3 and you proceed with delivery, the total doubles twice.
+- If product amount is 0.95, 0.25 and you proceed with delivery, the total amount is NaN.
 
-Billing address
+Billing address functionality:
 
-- If the name contains Lithuanian characters - OK
-- If the name is in lowercase letters - OK
+- Name contains Lithuanian characters - OK
+- Name is in lowercase letters - OK
 
 Fail:
-- If numbers are used instead of a name, but the card has a name and surname - OK
-- If there are spaces instead of a name and surname, but the card has a name and surname - OK
-- If there are spaces instead of a name and surname, and the card also has spaces instead of a name and surname - OK
-- If the name and surname are filled in, but the card has no name and surname - OK
+- Each field in the form can accept just 1 symbol, and that is enough
+- Numbers are used instead of a name, but the card has a name and surname.
+- If there are spaces instead of a name and surname, but the card has a name and surname.
+- If there are spaces instead of a name and surname, and the card also has spaces instead of a name and surname.
+- If the name and surname are filled in, but the card has no name and surname.
 
-Email:
+Email functionality:
 
 - Only one word, without @ - OK
 - @ but without .com - OK
@@ -40,40 +42,40 @@ Email:
 - Only spaces - OK
 
 Fail:
-- a@l.it - OK
+- a@l.it
 
-Adress:
+Adress functionality:
 
 - Cannot proceed without filling in the postal code - false
 
 Fail:
-- Entered only numbers instead of the street name - OK
-- Entered symbols instead of the street name - OK
-- Entered spaces instead of the street name - OK
-- You don't need to write the apartment number - OK
+- Entered only numbers instead of the street name.
+- Entered symbols instead of the street name.
+- Entered spaces instead of the street name.
+- You don't need to write the apartment number.
 
-Country:
+Country functionality:
 
 - If you don't select a country - it asks you to choose one for
 
-City:
+City functionality:
 - If you don't select a country - it asks you to choose one for
 
-Zip:
+Zip functionality:
 Fail:
 - If you enter a symbol - it allows you to proceed with the check.
 
-Payment:
+Payment functionality:
 
 Fail:
-- If there are spaces instead of a name - OK
-- If there are symbols instead of a name - OK
-- If there are numbers instead of a name - OK
-- If there are letters (both lowercase and uppercase) instead of the card number - OK
-- If you use a single number instead of the card number - OK
-- If you use symbols instead of the card number - OK
+- If there are spaces instead of a name.
+- If there are symbols instead of a name.
+- If there are numbers instead of a name.
+- If there are letters (both lowercase and uppercase) instead of the card number.
+- If you use a single number instead of the card number.
+- If you use symbols instead of the card number.
 
-CVV:
+CVV functionality:
 
 -  Allows selecting a negative number.
 
