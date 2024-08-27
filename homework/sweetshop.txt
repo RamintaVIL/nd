@@ -9,16 +9,16 @@ Please test this website: https://sweetshop.netlify.app/
 Basket functionality:
     Price calculation functionality:
 
-    Does the price get calculate in the following scenarios:
-        1. Price is correct with a single item.
-        2. Price is correct with multiple items.
-        3. Price is correct when an item is removed.
-        4. Price is 0 after the 'empty basket is clicked'
+Does the price get calculate in the following scenarios:
+- Price is correct with a single item.
+- Price is correct with multiple items.
+- Price is correct when an item is removed.
+- Price is 0 after the 'empty basket is clicked'
 
-        5. If you proceed with delivery and the total sum is less than 1.99, the final amount is display as NaN.
-        6. I could not find out if the promo code is working.
-        7. If you want to delete only 1 unit, you can't, you can only delete all items with this name. 
-        8. If you amount is 2 and you proceed with delivery, the total doubles it to 20.
+- If you proceed with delivery and the total sum is less than 1.99, the final amount is display as NaN.
+- I could not find out if the promo code is working.
+- If you want to delete only 1 unit, you can't, you can only delete all items with this name. 
+- If you amount is 2 and you proceed with delivery, the total doubles it to 20.
 
 Billing address
 
@@ -35,34 +35,36 @@ Email:
 
 - Only one word, without @ - OK
 - @ but without .com - OK
+- @a.com - OK
+- @l.it - OK
+- Only spaces - OK
 
 Fail:
-- @a.com - OK
-- Only spaces - false
-- @l.it - false
 - a@l.it - OK
 
 Adress:
 
 - Cannot proceed without filling in the postal code - false
+
+Fail:
 - Entered only numbers instead of the street name - OK
 - Entered symbols instead of the street name - OK
 - Entered spaces instead of the street name - OK
 
 Country:
 
--   jei nepasirenki country - praso pasirinkti
-    citty:
--   jei nepasirenki country - praso pasirinkti
-    zip:
--   jei irasai zenkla - leidzia pasidaryti check
+- If you don't select a country - it asks you to choose one for
 
-If you don't select a country - it asks you to choose one for the city:
-If you don't select a country - it asks you to choose one for the zip code:
-If you enter a symbol - it allows you to proceed with the check.
+City:
+- If you don't select a country - it asks you to choose one for
+
+Zip:
+Fail:
+- If you enter a symbol - it allows you to proceed with the check.
 
 Payment:
 
+Fail:
 - If there are spaces instead of a name - OK
 - If there are symbols instead of a name - OK
 - If there are numbers instead of a name - OK
@@ -74,6 +76,10 @@ CVV:
 
 -  Allows selecting a negative number.
 
+------------------------------------------------------------------------------------------------------------------------
+Sweets functionality:
+- Write you can 'choose your color', but you can't.
+- You can't choose how many units want.
 
 
 
