@@ -83,6 +83,13 @@ Sweets functionality:
 - You can't choose how many units you want.
 - When you click the 'Add to Basket' button, it should be brighter.
 
+------------------------------------------------------------------------------------------------------------------------
+Login functionality:
+- In the email field, you don't need to include '.com'.
+- The password can be just one character..
+- The password can be only space.
+- The social media icons are not working, and you cannot register through them.
+
 
 
 
