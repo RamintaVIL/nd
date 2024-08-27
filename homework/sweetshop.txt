@@ -5,7 +5,7 @@ Please test this website: https://sweetshop.netlify.app/
 
 2. Mark and comment those scenario which fail.
 
-
+------------------------------------------------------------------------------------------------------------------------
 Basket functionality:
     Price calculation functionality:
 
@@ -25,13 +25,13 @@ Billing address functionality:
 
 - Name contains Lithuanian characters - OK
 - Name is in lowercase letters - OK
+- If the name and surname are filled in, but the card has no name and surname - OK
 
 Fail:
-- Each field in the form can accept just 1 symbol, and that is enough
+- Each field in the form can accept just 1 symbol, and that is enoug.
 - Numbers are used instead of a name, but the card has a name and surname.
 - If there are spaces instead of a name and surname, but the card has a name and surname.
 - If there are spaces instead of a name and surname, and the card also has spaces instead of a name and surname.
-- If the name and surname are filled in, but the card has no name and surname.
 
 Email functionality:
 
