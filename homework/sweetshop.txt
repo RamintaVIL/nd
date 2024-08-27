@@ -50,6 +50,7 @@ Fail:
 - Entered only numbers instead of the street name - OK
 - Entered symbols instead of the street name - OK
 - Entered spaces instead of the street name - OK
+- You don't need to write the apartment number - OK
 
 Country:
 
@@ -78,8 +79,9 @@ CVV:
 
 ------------------------------------------------------------------------------------------------------------------------
 Sweets functionality:
-- Write you can 'choose your color', but you can't.
-- You can't choose how many units want.
+- On the page, it says that you can 'choose your color,' but you can't there is no button.
+- You can't choose how many units you want.
+- When you click the 'Add to Basket' button, it should be brighter.
 
 
 
