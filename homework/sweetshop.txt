@@ -15,13 +15,10 @@ Basket functionality:
         3. Price is correct when an item is removed.
         4. Price is 0 after the 'empty basket is clicked'
 
-        5. jei idejai 7 tuos pacius saldainius ir leidzia istrinti tik visus
-        6. jei idejai 7 tuos pacius saldainius ir pasispaude su pristatymu, tai suma padidedo 7 kartus
-        7. nan
-        8. promo kodas neprisitaiko joks, neaisku kaip skaiciuoja
--   jei paspaudi su pristatymu ismeta nan
--   jei suma mazesne nei 1.99 ir paspaudi pristatymas, nan
--   nesugalvoju, ar promo kodas veikia
+        5. If you proceed with delivery and the total sum is less than 1.99, the final amount is display as NaN.
+        6. I could not find out if the promo code is working.
+        7. If you want to delete only 1 unit, you can't, you can only delete all items with this name. 
+        8. If you amount is 2 and you proceed with delivery, the total doubles it to 20.
 
 Billing address
 
