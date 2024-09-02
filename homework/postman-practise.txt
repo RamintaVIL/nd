@@ -11,3 +11,139 @@ Create a new collection and a request for https://developers.thecatapi.com/
 and create GET with some filtering.
 
 This task is way harder and required reading and analysis.
+
+
+1. Mozilla Developer Network (MDN) API Dokumentacija:
+MDN yra puikus šaltinis, turintis išsamią informaciją apie įvairius API tipus, įskaitant žiniatinklio API, RESTful API ir kitus.
+
+Nuoroda: API | MDN Web Docs
+2. Postman API Network:
+„Postman“ ne tik leidžia išbandyti API, bet ir turi platų API katalogą su dokumentacija ir pavyzdžiais.
+
+Nuoroda: Postman API Network
+3. RapidAPI API Directory:
+„RapidAPI“ katalogas suteikia prieigą prie tūkstančių viešų API su dokumentacija, pavyzdžiais ir kainodaros informacija.
+
+Nuoroda: RapidAPI API Directory
+4. API Documentation Guide by Stoplight:
+Tai išsamus vadovas, kaip rašyti ir skaityti API dokumentaciją, apimantis įvairius dokumentacijos formatus ir geriausias praktikas.
+
+Nuoroda: API Documentation Guide
+5. Swagger Documentation:
+„Swagger“ siūlo įvairius įrankius API dokumentacijai ir testavimui, taip pat yra išsamūs gidai apie API kūrimą ir dokumentavimą.
+
+Nuoroda: Swagger Documentation
+Šie puslapiai turėtų suteikti gerą pagrindą API supratimui, dokumentacijai ir naudojimui.
+
+
+Norint sėkmingai formuoti „GET“ užklausas, būtina suprasti, kaip veikia URL, užklausos parametrai, antraštės, ir ką galima tikėtis gauti atsakymo formatu. Čia pateiksiu plačiau, kaip formuoti „GET“ užklausas ir kokie komponentai yra svarbūs.
+
+1. URL struktūra
+„GET“ užklausa naudoja URL, kad nusiųstų užklausą į serverį ir gautų atsakymą. Pagrindinė URL struktūra yra tokia:
+
+plaintext
+Copy code
+http(s)://domenas/kelias?parametras1=verte1&parametras2=verte2
+Pagrindiniai komponentai:
+
+Protokolas: http:// arba https:// (rekomenduojama naudoti HTTPS, nes jis saugesnis).
+Domenas: Pvz., api.thecatapi.com, kuris nurodo, į kokį serverį siunčiama užklausa.
+Kelias: Pvz., /v1/images/search, kuris nurodo specifinį API kelią ar resursą, kurį norite pasiekti.
+Užklausos parametrai: Pridedami po ?, jie perduoda papildomą informaciją serveriui. Kiekvienas parametras turi raktą ir reikšmę, atskirtą = ženklu. Keli parametrai atskiriami & ženklu.
+2. Užklausos parametrai (Query Parameters)
+Užklausos parametrai leidžia nusiųsti papildomus duomenis, kurie padeda serveriui suprasti, kokią informaciją tu nori gauti. Pvz.:
+
+plaintext
+Copy code
+https://api.thecatapi.com/v1/images/search?limit=5&breed_id=beng
+limit=5: Serveriui nurodo grąžinti 5 rezultatus.
+breed_id=beng: Filtruoja rezultatus, kad būtų grąžintos tik tos katės, kurios priklauso Bengalų veislei.
+3. Antraštės (Headers)
+Antraštės leidžia perduoti papildomą informaciją, pvz., autentifikacijos duomenis, pageidaujamą atsakymo formatą, kalbą ir pan. Pvz.:
+
+Authorization: Bearer YOUR_API_KEY: Tai dažnai naudojama API autentifikacijai.
+Accept: application/json: Nurodo, kad norėtum gauti atsakymą JSON formatu.
+„GET“ užklausose antraštės paprastai naudojamos autentifikacijai arba norint nurodyti, kokiu formatu tu nori gauti atsakymą.
+
+4. Ką galima tikėtis gauti atsakant?
+Serveris atsakys į „GET“ užklausą grąžindamas informaciją, kurią tu užklausi. Atsakymas paprastai būna:
+
+Statuso kodas: Pvz., 200 OK, 404 Not Found, 401 Unauthorized.
+Atsakymo kūnas (Body): Tai pagrindinė duomenų dalis, dažnai pateikiama JSON formatu.
+Atsakymo antraštės: Gali apimti informaciją apie turinio tipą, koduotę, serverio duomenis ir pan.
+5. Pavyzdys
+Tarkime, nori gauti katės vaizdą iš „The Cat API“. Tavo URL gali atrodyti taip:
+
+plaintext
+Copy code
+https://api.thecatapi.com/v1/images/search?limit=1&size=small
+URL: https://api.thecatapi.com/v1/images/search
+Parametrai: limit=1 (vienas rezultatas), size=small (mažas dydis).
+Jei tavo API raktas yra būtinas, pridėk jį kaip antraštę:
+
+plaintext
+Copy code
+Authorization: Bearer YOUR_API_KEY
+Tada „GET“ užklausa bus išsiųsta į API, ir atsakymas gali būti JSON objektas su katės nuotraukos URL ir kita susijusia informacija.
+
+6. Naršyklės ir įrankiai
+Galima siųsti „GET“ užklausas tiesiog naršyklėje (jei API nereikalauja autentifikacijos). Taip pat gali naudoti specializuotus įrankius kaip „Postman“ ar „cURL“ komandas terminale, kad suformuotum sudėtingesnes užklausas.
+
+Santrauka
+„GET“ užklausa leidžia gauti informaciją iš serverio pagal nurodytą URL.
+Naudok parametrus ir antraštes, kad tinkamai apibrėžtum, kokios informacijos tau reikia.
+Atsakymas dažniausiai būna JSON formatu su statuso kodu ir kitais duomenimis.
+Formuojant „GET“ užklausas, būtina laikytis API dokumentacijos ir tinkamai naudoti URL, parametrus bei antraštes, kad gautum norimą informaciją.
+
+
+
+Naudojant URL puslapiuose, simbolis ? ir ženklai kaip % turi skirtingas funkcijas ir naudojami pagal kontekstą:
+
+1. ? simbolio naudojimas URL
+Simbolis ? URL nurodo, kad po jo seka užklausos eilutė (query string). Užklausos eilutė yra naudojama perduoti papildomus parametrus serveriui. Šie parametrai paprastai yra raktas-reikšmė poros, atskirtos ampersand (&) simboliais.
+
+Pavyzdžiai:
+
+Vienas užklausos parametras:
+URL: https://example.com/products?category=books
+Paaiškinimas: Perduoda parametrą category su reikšme books.
+Daugiau nei vienas užklausos parametras:
+URL: https://example.com/products?category=books&sort=price_asc
+Paaiškinimas: Perduoda parametrą category su reikšme books ir sort su reikšme price_asc.
+2. % simbolių naudojimas URL
+Simbolis % URL yra naudojamas kaip dalis URL kodavimo (percent encoding) schema. Ši schema leidžia naudoti simbolius, kurie gali būti neleistini arba specialūs URL, pavyzdžiui, tarpus arba kitus simbolius, kurie turi būti koduojami, kad jie būtų tinkamai perduoti per HTTP.
+
+Dažnai naudojami simboliai:
+
+Tarpas ( ) koduojamas kaip %20.
+URL: https://example.com/search?query=hello%20world
+Paaiškinimas: Perduoda užklausą query su reikšme hello world (tarpo simboliai yra koduojami kaip %20).
+Ampersand (&) koduojamas kaip %26.
+URL: https://example.com/search?query=hello%26world
+Paaiškinimas: Perduoda užklausą query su reikšme hello&world (ampersand simboliai koduojami kaip %26).
+Klausimo ženklas (?) koduojamas kaip %3F.
+URL: https://example.com/search%3Fquery=hello
+Paaiškinimas: URL su klausimo ženklu koduojamu kaip %3F.
+Kodavimo naudojimo pavyzdžiai:
+
+Tarpa kodavimas:
+URL: https://example.com/search?query=my%20search%20term
+Paaiškinimas: Perduoda užklausą query su reikšme my search term, kur tarpai koduojami kaip %20.
+Specialių simbolių kodavimas:
+URL: https://example.com/encode?value=hello%40world
+Paaiškinimas: Perduoda užklausą value su reikšme hello@world, kur @ simbolis koduojamas kaip %40.
+Kodavimo taisyklės
+URL kodavimas yra naudojamas siekiant užtikrinti, kad visi simboliai, kurie gali sukelti problemas ar būti nesuprantami naršyklėms ar serveriams, būtų tinkamai pateikti. Dažniausiai koduojami simboliai yra tie, kurie nėra leistini URL arba kurie turi specialias reikšmes.
+
+Užklausos eilutėje naudojami specialūs simboliai: &, =, ?, #
+Simboliai su specialia reikšme URL: (tarpas), # (fragment identifier), % (percent encoding pradžia)
+
+
+
+
+API raktas (angl. API key) yra unikalus identifikatorius, naudojamas autentifikuoti programas ar vartotojus, kai jie nori naudotis tam tikru API (angl. Application Programming Interface – programavimo sąsaja). API raktai yra naudojami siekiant apriboti prieigą prie API, užtikrinti saugumą ir sekti API naudojimą.
+
+Kai programa ar vartotojas nori atlikti užklausą į API, jie privalo nurodyti savo API raktą. API serveris tikrina raktą, kad įsitikintų, jog užklausa yra siunčiama iš autorizuoto šaltinio. API raktai gali turėti tam tikras teises ar ribojimus, pavyzdžiui, jie gali leisti pasiekti tik tam tikrus duomenis arba gali būti apriboti tam tikram užklausų skaičiui per dieną.
+
+Naudojimo pavyzdys
+Įsivaizduokite, kad kuriate programėlę, kuri turi gauti orų prognozes iš tam tikros tarnybos API. Jūs gaunate API raktą iš tos tarnybos, įtraukiate jį į savo programą, o tada API užklausose įtraukiate šį raktą, kad tarnyba žinotų, jog užklausos ateina iš autorizuoto vartotojo ar programos.
