@@ -5,3 +5,54 @@ Continue with previous homework.
 2. Install, configure and launch e2e tests with cypress.
 3. Research .GET .contains .press .type, isolated tests and best practices of cypress.
 4. Try cover your application with cypress automated tests.
+.type(), .get(), .press(), ir .contains() — yra dažniausiai naudojamos sąveikaujant su svetainės elementais ir atliekant testus.
+
+1. .get() - komanda naudojama norint rasti HTML elementą pagal CSS selektorių.
+Kaip veikia: Ji suranda vieną ar kelis puslapio elementus, naudojant standartinius CSS selektorius, pvz., ID, klasę, tag'ą, atributus ir kt.
+Pavyzdžiai:
+Norint rasti elementą su ID #name:
+cy.get('#name');
+Norint rasti mygtuką su klase .submit:
+cy.get('.submit');
+Norint rasti visus input elementus:
+cy.get('input');
+Mygtukas su klase "submit":
+cy.get('button.submit');
+Mygtukas su ID "submitButton"
+cy.get('#submitButton'); 
+
+2. .type() - komanda naudojama norint įvesti tekstą į įvesties laukelį (pvz., tekstinį lauką arba tekstinę sritį).
+Kaip veikia: Ji imituoja naudotojo klaviatūros įvedimą į pasirinktą elementą, pvz., input ar text area.
+Pavyzdžiai:
+Norint įvesti tekstą „John Doe“ į įvesties lauką su ID #name:
+cy.get('#name').type('John Doe');
+Norint įvesti el. pašto adresą į lauką su ID #email:
+cy.get('#email').type('example@example.com');
+Pastaba: .type() taip pat leidžia naudoti specialius simbolius, pvz., {backspace}, {enter}:
+cy.get('#input').type('John Doe{enter}');
+Tai imituoja tekstą įvedus „John Doe“, o po to spaudžiant „Enter“.
+
+3. .press() - Cypress neturi natūralios .press() komandos, tačiau galite spausti klavišus naudodami .type() su specialiaisiais simboliais.
+Kaip tai veikia: Cypress leidžia imituoti klavišų paspaudimus per .type() komandas, pavyzdžiui, {enter}, {esc}, {backspace} ir pan.
+Pavyzdžiui:
+cy.get('#input').type('{enter}'); // Tai imituoja „Enter“ paspaudimą
+cy.get('#input').type('{esc}');   // Tai imituoja „Escape“ paspaudimą
+Taigi, jei reikia imituoti mygtuko spaudimą (pvz., klaviatūros „Enter“), naudojate .type('{enter}') vietoj .press().
+
+4. .contains()- naudojama norint surasti elementą pagal jo tekstą. Ji leidžia lengvai rasti elementą, kurio tekstas atitinka pateiktą vertę.
+Kaip veikia: Suranda pirmą elementą, kuris turi atitinkamą tekstą. Galima naudoti su tekstu arba su konkrečiu selektoriumi ir tekstu.
+Pavyzdžiai:
+Norint surasti elementą, kuriame yra tekstas „Submit“:
+cy.contains('Submit');
+Norint surasti mygtuką su tekstu „Submit“:
+cy.contains('button', 'Submit');
+Norint rasti nuorodą su tekstu „Click here“:
+cy.contains('a', 'Click here');
+
+Išvada:
+.get(): Randa elementą pagal selektorių.
+.type(): Įveda tekstą į įvesties laukus.
+.press(): Tiesiogiai nėra, bet galima imituoti klavišų paspaudimus naudojant .type() su specialiaisiais simboliais.
+.contains(): Randa elementą pagal tekstą arba pagal selektorių ir tekstą.
+Šios komandos yra esminės kuriant Cypress testus ir leidžia efektyviai sąveikauti su DOM elementais.
+
